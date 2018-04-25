@@ -12,7 +12,7 @@ import re
 import oauth2 as oauth
 import logging
 import urllib2 as urllib
-
+from os import environ
 
 app = Flask(__name__)
 DATABASE = "demp.db"
