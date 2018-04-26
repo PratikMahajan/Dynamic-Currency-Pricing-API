@@ -34,6 +34,8 @@ if not os.path.exists(DATABASE):
     cur.execute("CREATE TABLE buy_coins (recv_address varchar(256), quantity int, price varchar(20));")
     cur.execute("CREATE TABLE sell_coins (sender_address varchar(256), quantity int, price varchar(20));")
     cur.execute("CREATE TABLE matched_txn (sender_address varchar(256), recv_address varchar(256),quantity int, price varchar(20));")
+    cur.execute("CREATE TABLE sell_txn(sender_address varchar(256), recv_address varchar(256),quantity int, price varchar(20));")
+    cur.execute("CREATE TABLE buy_txn(sender_address varchar(256), recv_address varchar(256),quantity int, price varchar(20));")
     cur.execute("CREATE TABLE verify(address varchar(256), bool int);")
     conn.commit()
     conn.close()
@@ -155,6 +157,8 @@ def buy_sell_match():
                 for row in res:
                     if(abs(float(row[3])-float(row[4]))<0.5):
                         cur2.execute("Insert into matched_txn values(?,?,?,?)",(row[1],row[0],row[2], row[4]))
+                        cur2.execute("Insert into sell_txn values(?,?,?,?)", (row[1], row[0], row[2], row[4]))
+                        cur2.execute("Insert into buy_txn values(?,?,?,?)", (row[1], row[0], row[2], row[4]))
                         cur2.execute("Delete from buy_coins where recv_address=? AND quantity=? AND price=?",(row[0],row[2],row[3]))
                         cur2.execute("Delete from sell_coins where sender_address=? AND quantity=? AND price=?",(row[1],row[2],row[4]))
                         get_db().commit()
@@ -250,7 +254,7 @@ def sell_match():
     try:
         recv_address = request.json['address']
         cur = get_db().cursor()
-        res = cur.execute("Select sender_address, quantity, price from matched_txn where recv_address=? Limit 1",(recv_address, ))
+        res = cur.execute("Select sender_address, quantity, price from buy_txn where recv_address=? Limit 1",(recv_address, ))
         for row in res:
             items = {}
             items['recv_from'] = str(row[0])
@@ -271,7 +275,7 @@ def buy_match():
     try:
         sender_address = request.json['address']
         cur = get_db().cursor()
-        res = cur.execute("Select recv_address, quantity, price from matched_txn where sender_address=? limit 1", (sender_address, ))
+        res = cur.execute("Select recv_address, quantity, price from sell_txn where sender_address=? limit 1", (sender_address, ))
         for row in res:
             # logging.debug(row)
             items = {}
@@ -348,6 +352,38 @@ def recVerify():
     except Exception as e:
         logging.debug("Error in receive Verify" + str(e))
         return Response(status=430)
+
+
+@app.route("/delsel", methods=["POST"])
+def delsel():
+    try:
+        address = request.json['address']
+        cur = get_db().cursor()
+        res = cur.execute("Delete from sell_txn where sender_address=? ", (address,))
+        # res.rowcount
+        get_db().commit()
+        if res.rowcount>0:
+            return Response( status=200)
+        return Response(status=430)
+    except Exception as e:
+        logging.debug("Error in receive Verify" + str(e))
+        return Response(status=490)
+
+@app.route("/delbuy", methods=["POST"])
+def delbuy():
+    try:
+        address = request.json['address']
+        cur = get_db().cursor()
+        res = cur.execute("Delete from buy_txn where recv_address=? ", (address,))
+        # res.rowcount
+        get_db().commit()
+        if res.rowcount>0:
+            return Response( status=200)
+        return Response(status=430)
+    except Exception as e:
+        logging.debug("Error in receive Verify" + str(e))
+        return Response(status=490)
+
 
 
 
