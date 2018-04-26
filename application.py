@@ -311,7 +311,7 @@ def sendDynamicPrice():
         if(multiplier<prevMultiplier):
             polar=-1
         prevMultiplier=multiplier
-        priceIndex=(polar*float(priceIndex)*float(abs(multiplier))*0.00003)+float(priceIndex)
+        priceIndex=(polar*float(priceIndex)*float(abs(multiplier))*0.000001)+float(priceIndex)
         # print multiplier
         items = []
         items.append({'Price': priceIndex})
