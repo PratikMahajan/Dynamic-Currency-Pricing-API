@@ -329,7 +329,10 @@ def sendVerify():
         address = request.json['address']
         bool = request.json['bool']
         cur = get_db().cursor()
-        res = cur.execute("INSERT into verify values(?,?);", (address, int(bool)))
+        if (int(bool)==0):
+            res=cur.execute("Update verify SET bool=? where address=?;", (int(bool), address))
+        else:
+            res = cur.execute("INSERT into verify values(?,?);", (address, int(bool)))
         get_db().commit()
         return Response(status=200)
 
@@ -347,6 +350,7 @@ def recVerify():
         for row in res:
             items = {}
             items['bool'] = int(row[0])
+
             return Response(json.dumps(items), status=200, mimetype='application/json')
         return Response(status=430)
     except Exception as e:
