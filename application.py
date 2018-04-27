@@ -332,6 +332,7 @@ def sendVerify():
         if (int(bool)==0):
             res=cur.execute("Update verify SET bool=? where address=?;", (int(bool), address))
         else:
+            res = cur.execute("Update verify SET bool=? where address=?;", (int(bool), address))
             res = cur.execute("INSERT into verify values(?,?);", (address, int(bool)))
         get_db().commit()
         return Response(status=200)
