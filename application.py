@@ -155,7 +155,7 @@ def buy_sell_match():
                 cur2=get_db().cursor()
                 res = cur.execute("Select bc.recv_address, sc.sender_address, sc.quantity, bc.price, sc.price from sell_coins as sc inner join buy_coins as bc where sc.quantity=bc.quantity")
                 for row in res:
-                    if(abs(float(row[3])-float(row[4]))<0.5):
+                    if(abs(float(row[3])-float(row[4]))<1):
                         cur2.execute("Insert into matched_txn values(?,?,?,?)",(row[1],row[0],row[2], row[4]))
                         cur2.execute("Insert into sell_txn values(?,?,?,?)", (row[1], row[0], row[2], row[4]))
                         cur2.execute("Insert into buy_txn values(?,?,?,?)", (row[1], row[0], row[2], row[4]))
