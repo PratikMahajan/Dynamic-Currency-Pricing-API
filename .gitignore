@@ -1,2 +1,7 @@
 venv
 /venv
+
+apikeys.py
+.DS_Store
+
+*.pyc
