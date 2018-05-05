@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee5a6aff-c370-48c8-aa6f-1cd02c6f6ead" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/DynamicAlgo.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e839a01-f9a6-4977-82c5-6e6e2c4cd055/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ade12c56-4aea-49ac-9fde-8c7bb986dc83.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ade12c56-4aea-49ac-9fde-8c7bb986dc83/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Procfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/apikeys.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/application.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demp.db" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/runtime.txt" afterPath="" />
-    </list>
+    <list default="true" id="ee5a6aff-c370-48c8-aa6f-1cd02c6f6ead" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
