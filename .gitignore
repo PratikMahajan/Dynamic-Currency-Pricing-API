@@ -3,5 +3,5 @@ venv
 
 apikeys.py
 .DS_Store
-
+.idea
 *.pyc
