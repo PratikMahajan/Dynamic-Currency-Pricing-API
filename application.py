@@ -333,7 +333,9 @@ def sendVerify():
             res=cur.execute("Update verify SET bool=? where address=?;", (int(bool), address))
         else:
             res = cur.execute("Update verify SET bool=? where address=?;", (int(bool), address))
-            res = cur.execute("INSERT into verify values(?,?);", (address, int(bool)))
+            if not res.rowcount:
+                res = cur.execute("INSERT into verify values(?,?);", (address, int(bool)))
+                # print ("inside")
         get_db().commit()
         return Response(status=200)
 
@@ -393,4 +395,4 @@ def delbuy():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host= '0.0.0.0',port=5000)
+    app.run(debug=True, host= '0.0.0.0',port=5050)
