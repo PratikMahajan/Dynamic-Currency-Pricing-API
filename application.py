@@ -163,6 +163,7 @@ def buy_sell_match():
                         cur2.execute("Delete from sell_coins where sender_address=? AND quantity=? AND price=?",(row[1],row[2],row[4]))
                         get_db().commit()
             except Exception as e:
+                get_db().commit()
                 logging.debug('Exception in Matcher'+str(e))
                 exit()
     logging.debug('Matcher Crashed')
@@ -390,6 +391,44 @@ def delbuy():
     except Exception as e:
         logging.debug("Error in receive Verify" + str(e))
         return Response(status=490)
+
+
+
+
+@app.route("/getTransactions", methods=["POST"])
+def getTransactions():
+    try:
+        recv_address = request.json['address']
+        cur = get_db().cursor()
+        result=[]
+        res = cur.execute("Select sender_address, quantity, price from matched_txn where recv_address=?",(recv_address, ))
+        for row in res:
+            items = {}
+            items['from'] = str(row[0])
+            items['to'] = recv_address
+            items['quantity'] = int(row[1])
+            items['price'] = float(row[2])
+            result.append(items)
+        res = cur.execute("Select recv_address, quantity, price from matched_txn where sender_address=?",
+                          (recv_address,))
+        for row in res:
+            items = {}
+            items['to'] = str(row[0])
+            items['from'] = recv_address
+            items['quantity'] = int(row[1])
+            items['price'] = float(row[2])
+            result.append(items)
+        if result:
+
+            return Response(json.dumps(result), status=200, mimetype='application/json')
+        return Response(status=550)
+    except Exception as e:
+        print e
+        return Response(status=590)
+
+
+
+
 
 
 
