@@ -8,7 +8,7 @@ This project contains the following functionality:
 
 
 ### Transaction Matching Algorithm:
-Created a thread that ran the Transacton Mathing every minute. Used SQLITE3 to store all the transactions.
+Created a thread that ran the Transacton Mathing every minute. Used SQLITE3 to store all the transactions.<br/>
 Following Tables were created.
 1. Buy_coins
 2. Sell_couns
@@ -37,3 +37,100 @@ Used a combination of python-flask and AWS S3
 
 
 ##### Pricing Algorithm and Matching algorithm are running as daemon threads
+
+
+
+### API Endpoints
+
+##### BUY
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### SELL
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### BUY Matched
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### SELL Matched
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### Get Dynamic Price
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+
+##### Send Verification Flag
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### Receive Verification Flag
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+
+##### Sell Transaction Received
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+##### Buy Transaction Received
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
+
+
+##### Get All Transactions
+* **URL**:<br/>
+* **Method**:<br/>
+* **URL Params**<br/>
+    None
+* **Data Params**<br/>
+* **Success Response**<br/>
+* **Error Response**<br/>
