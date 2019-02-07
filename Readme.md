@@ -7,7 +7,7 @@ This project contains the following functionality:
 
 
 
-#### Transaction Matching Algorithm:
+### Transaction Matching Algorithm:
 Created a thread that ran the Transacton Mathing every minute. Used SQLITE3 to store all the transactions.
 Following Tables were created.
 1. Buy_coins
@@ -18,7 +18,7 @@ Following Tables were created.
 Used Python-Flask and deployed on heroku/AWS-EBS<br/>
 
 
-#### Coin Pricing Algorithm:
+### Coin Pricing Algorithm:
 Dynamically price the coin according to to the current market sentiment(Twitter) and demand and supply gap.
 
 ##### Market Sentiment:
@@ -30,10 +30,10 @@ Dynamically price the coin according to to the current market sentiment(Twitter)
 * Created custom formula so that prices are stable and not fluctuating randomly or frequently in minutes.
 
 
-#### Verification Backend:
+### Verification Backend:
 Used a combination of python-flask and AWS S3
 * Documents of users uploaded to AWS S3 and verification set through python flask on heroku/AWS-EBS
 * Verification admin manually verified users and sent verification confirmation
 
 
-##### Pricing Algorithm and Matching algorithm are running as daemon threads 
+##### Pricing Algorithm and Matching algorithm are running as daemon threads
