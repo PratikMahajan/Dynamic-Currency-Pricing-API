@@ -44,7 +44,9 @@ Used a combination of python-flask and AWS S3
 
 ##### BUY
 * **URL**:<br/>
+ /buy
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -53,7 +55,9 @@ Used a combination of python-flask and AWS S3
 
 ##### SELL
 * **URL**:<br/>
+/sell
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -62,7 +66,9 @@ Used a combination of python-flask and AWS S3
 
 ##### BUY Matched
 * **URL**:<br/>
+/buymatched
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -71,7 +77,9 @@ Used a combination of python-flask and AWS S3
 
 ##### SELL Matched
 * **URL**:<br/>
+/sellmatched
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -80,7 +88,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Get Dynamic Price
 * **URL**:<br/>
+/dynamicPrice
 * **Method**:<br/>
+  `GET`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -90,7 +100,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Send Verification Flag
 * **URL**:<br/>
+/sendVerify
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -99,7 +111,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Receive Verification Flag
 * **URL**:<br/>
+/recVerify
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -109,7 +123,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Sell Transaction Received
 * **URL**:<br/>
+/delsel
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -118,7 +134,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Buy Transaction Received
 * **URL**:<br/>
+/delbuy
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
@@ -128,7 +146,9 @@ Used a combination of python-flask and AWS S3
 
 ##### Get All Transactions
 * **URL**:<br/>
+/getTransactions
 * **Method**:<br/>
+  `POST`
 * **URL Params**<br/>
     None
 * **Data Params**<br/>
