@@ -15,7 +15,7 @@ import urllib2 as urllib
 from os import environ
 
 app = Flask(__name__)
-DATABASE = "demp.db"
+DATABASE = "data.db"
 priceIndex=400.000
 
 # ------------------------------------------
